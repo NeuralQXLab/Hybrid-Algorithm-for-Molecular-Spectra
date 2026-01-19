@@ -53,11 +53,6 @@ Using [uv](https://github.com/astral-sh/uv) (recommended):
 uv sync
 ```
 
-Or with pip:
-```bash
-pip install -e .
-```
-
 ### Julia
 
 ```julia
