@@ -61,24 +61,6 @@ Pkg.activate(".")
 Pkg.instantiate()
 ```
 
-## Dependencies
-
-### Python
-- matplotlib >= 3.10.1
-- netket >= 3.16.1
-- pyscf >= 2.8.0
-- qutip >= 5.1.1
-- seaborn >= 0.13.2
-- tqdm >= 4.67.1
-
-### Julia
-- ITensors
-- ITensorMPS
-- HDF5
-- JLD2
-- JSON
-- Glob
-
 ## Usage
 
 ### Generating Plots
