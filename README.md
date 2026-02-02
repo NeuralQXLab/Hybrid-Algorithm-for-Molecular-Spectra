@@ -104,7 +104,7 @@ Where `molecule_index` is 0-7 corresponding to:
 - 3: HCl (sto-6g, 10 orbitals)
 - 4-7: Alternative perturbations for the same molecules
 
-Results are saved to `data/results/`.
+Results are saved to `hybridqc/data/results/`.
 
 ### Running with Tensor Networks (Julia - for larger systems)
 
@@ -115,20 +115,20 @@ The tensor network approach uses DMRG for ground states and TDVP for time evolut
 cd hybridqc/src/python/generate_hamiltonian
 uv run python convert_fcidump_to_json.py
 ```
-This converts all `.dat` files in `hamiltonians/` to JSON format in `data/hamiltonians_json/`.
+This converts all `.dat` files in `hybridqc/hamiltonians/` to JSON format in `hybridqc/data/hamiltonians_json/`.
 
 **Step 2: Compute the ground state with DMRG**
 ```bash
 cd hybridqc/src/julia
 julia --project=../../.. DMRG_groundstate.jl <molecule> <basis> <n_electrons> <n_orbitals> <R>
 ```
-Output: `data/ground_states/<molecule>_<basis>_<no>o<ne>e_R<R>.jld2`
+Output: `hybridqc/data/ground_states/<molecule>_<basis>_<no>o<ne>e_R<R>.jld2`
 
 **Step 3: Sample the perturbed state**
 ```bash
 julia --project=../../.. sample_perturbed_state.jl <molecule> <basis> <n_electrons> <n_orbitals> <R> <n_samples>
 ```
-Output: `data/sampled/<molecule>_.../perturbed_state_nsamples<n>.jld2`
+Output: `hybridqc/data/sampled/<molecule>_.../perturbed_state_nsamples<n>.jld2`
 
 **Step 4: Run TDVP time evolution**
 ```bash
